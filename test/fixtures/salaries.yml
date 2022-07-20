@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  base: 1
+  bonus: 1
+  issue_date: 2022-07-20
+  employee: one
+
+two:
+  base: 1
+  bonus: 1
+  issue_date: 2022-07-20
+  employee: two
