@@ -258,6 +258,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    validates_email_format_of (1.6.3)
+      i18n
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -297,6 +299,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  validates_email_format_of
   web-console
   webdrivers
 

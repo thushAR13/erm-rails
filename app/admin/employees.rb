@@ -15,7 +15,7 @@ ActiveAdmin.register Employee do
   #   permitted
   # end
   form do |f|
-    f.inputs :department_id, :name, :email, :phone
+    f.inputs :department, :name, :email, :phone
     f.submit "Create"
   end
 
