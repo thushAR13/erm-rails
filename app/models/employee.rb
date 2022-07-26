@@ -4,7 +4,7 @@ class Employee < ApplicationRecord
   has_many :leaves
   has_many :salaries
   has_many :attendances
-
+  has_one :user, through: :email
   validates :phone,:presence => true,
                  :numericality => true,
                  :length => { :minimum => 10, :maximum => 11 }
