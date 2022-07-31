@@ -1,13 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Employees</h1>
-
+<%= current_employee.email%>
+<br>
 <div id="employees">
   <% @employees.each do |employee| %>
-    <%= render employee %>
-    <p>
-      <%= link_to "Show this employee", employee %>
-    </p>
+    <% if employee == current_employee %>
+      <%= render employee %>
+      
+      <p>
+        <%= link_to "Show this employee", employee %>
+      </p>
+    <%end%>
   <% end %>
 </div>
 

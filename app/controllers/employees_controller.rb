@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[ show edit update destroy ]
   before_action :authenticate_employee!
+  before_action :correct_employee, only: %i[edit update destroy]
 
 
   # GET /employees or /employees.json
@@ -68,5 +69,15 @@ class EmployeesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def employee_params
       params.require(:employee).permit(:name, :email, :phone, :dob, :address, :role, :joining_date, :department_id, :password, :password_confirmation)
+    end
+
+    def correct_employee
+      if Employee.find_by(id: params[:id]).id == current_employee.id
+        @employee = Employee.find_by(id: params[:id])
+      # render json: @forum
+      else
+        @employee = nil
+      end
+      redirect_to root_path, notice: 'Not Authorised' if @employee.nil?
     end
 end
