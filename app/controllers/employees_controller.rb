@@ -1,7 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[ show edit update destroy ]
   before_action :authenticate_employee!
-  before_action :correct_employee, only: %i[edit update destroy]
+  before_action :correct_employee, only: %i[show edit update destroy]
 
 
   # GET /employees or /employees.json

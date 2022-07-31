@@ -9,10 +9,14 @@
       <%= render employee %>
       
       <p>
-        <%= link_to "Show this employee", employee %>
+        <%= link_to "Edit profile",edit_employee_path(id: current_employee.id)%>
+      </p>
+      
+      <p>
+        <%= link_to "Manage leaves", leaves_path %>
       </p>
     <%end%>
   <% end %>
 </div>
 
-<%= link_to "New employee", new_employee_path %>
+
